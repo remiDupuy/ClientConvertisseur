@@ -1,4 +1,3 @@
-D:\ClientConvertisseurV1\ClientConvertisseurV1\obj\x86\Debug\ClientConvertisseurV1.csprojResolveAssemblyReference.cache
 D:\ClientConvertisseurV1\ClientConvertisseurV1\obj\x86\Debug\App.g.i.cs
 D:\ClientConvertisseurV1\ClientConvertisseurV1\obj\x86\Debug\App.g.cs
 D:\ClientConvertisseurV1\ClientConvertisseurV1\obj\x86\Debug\MainPage.g.i.cs

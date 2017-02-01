@@ -44,23 +44,5 @@ namespace ClientConvertisseurV1.Service
             return model;
         }
 
-
-        /*HttpClient client = new HttpClient();
-        public async Task<List<Devise>> getAllDevisesAsync()
-        {
-            client.BaseAddress = new Uri("http://localhost:3459/api");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            String responseStr = null;
-            HttpResponseMessage response = await client.GetAsync(client.BaseAddress);
-            if(response.IsSuccessStatusCode)
-            {
-                responseStr = await response.Content.ReadAsStringAsync();
-            }
-
-            List<Devise> listDevises = JsonConvert.DeserializeObject<List<Devise>>(responseStr);
-            return listDevises;*/
-
     }
 }
