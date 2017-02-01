@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using ClientConvertisseurV1.Model;
+using ClientConvertisseurV1.Service;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +24,53 @@ namespace ClientConvertisseurV1
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        List<Devise> listDevises;
         public MainPage()
         {
             this.InitializeComponent();
+            ActionGetData();
+        }
+
+        private async void ActionGetData()
+        {
+            var result = await WSService.Instance.getAllDevisesAsync();
+            listDevises = new List<Devise>(result);
+            this.cbxDevise.DataContext = listDevises;
+        }
+
+        private void btnConvert_Click(object sender, RoutedEventArgs e)
+        {
+            double mtEuros = -1;
+            try
+            {
+                mtEuros = Convert.ToDouble(this.txtMtEuros.Text);
+            }
+            catch
+            {
+                
+            }
+            if(mtEuros != -1 && mtEuros > 0)
+            {
+                try
+                {
+                    Devise selectDevise = (Devise)this.cbxDevise.SelectedItem;
+                    double mtConvert = selectDevise.Taux * mtEuros;
+                    this.txtMtConvert.Text = Convert.ToString(mtConvert);
+                }
+                catch 
+                {
+
+                   
+                }
+            }
+           
+
+            
+
+            
+
+            
+
         }
     }
 }
